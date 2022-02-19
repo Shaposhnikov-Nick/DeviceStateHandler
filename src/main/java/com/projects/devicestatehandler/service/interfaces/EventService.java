@@ -1,20 +1,22 @@
 package com.projects.devicestatehandler.service.interfaces;
 
-import com.projects.devicestatehandler.entity.Device;
+import com.projects.devicestatehandler.entity.Event;
 
 import java.util.List;
 
 public interface EventService {
 
     // получение списка всех событий
-    List<Device> getAllEvents();
+    List<Event> getAllEvents();
 
     // добавление сбытия
-    void saveEvent(Device device);
+    void saveEvent(Event event);
 
     // получение события по id
-    Device getEvent(int id);
+    Event getEvent(int id);
 
     // удаление события по id
     void deleteEvent(int id);
+
+    List<Event> findEventByDeviceId(int id);
 }

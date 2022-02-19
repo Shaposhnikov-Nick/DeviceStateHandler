@@ -22,7 +22,7 @@ public class Event {
     @Column(name = "id")
     private int id;
 
-    @Column(name = "device_id")
+    @Column(name = "devices_id")
     private int deviceId;
 
     @Column(name = "date")

@@ -1,5 +1,6 @@
 package com.projects.devicestatehandler.entity;
 
+import com.projects.devicestatehandler.model.Status;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -25,8 +26,10 @@ public class Project {
     @Column(name = "name")
     private String projectName;
 
+    @Transient
+    private Map<String, Status> stats;
+
     @OneToMany(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH},
             mappedBy = "projectId")
     private List<Device> devices;
-
 }
