@@ -4,7 +4,6 @@ import com.projects.devicestatehandler.entity.Device;
 import com.projects.devicestatehandler.entity.Event;
 import com.projects.devicestatehandler.entity.Project;
 import com.projects.devicestatehandler.model.SummaryInfo;
-import com.projects.devicestatehandler.repository.DeviceRepository;
 import com.projects.devicestatehandler.repository.ProjectRepository;
 import com.projects.devicestatehandler.service.interfaces.DeviceService;
 import com.projects.devicestatehandler.service.interfaces.EventService;
@@ -23,36 +22,12 @@ public class DeviceServiceImpl implements DeviceService {
     private ProjectRepository projectRepository;
 
     @Autowired
-    private DeviceRepository deviceRepository;
-
-    @Autowired
     private EventService eventService;
-
-    @Override
-    public List<Device> getAllDevices() {
-        return null;
-    }
-
-    @Override
-    public void saveDevice(Device device) {
-
-    }
-
-    @Override
-    public Device getDevice(int id) {
-        return null;
-    }
-
-    @Override
-    public void deleteDevice(int id) {
-
-    }
 
     @Override
     public Map<String, Device> findDevicesByProjectId(int projectId) {
 
         Map<String, Device> devicesOfProject = new HashMap<>();
-
 
         Project project = null;
 
@@ -62,7 +37,7 @@ public class DeviceServiceImpl implements DeviceService {
             project = optionalProject.get();
 
         // получение списка устройств проекта
-        List<Device> devices = project.getDevices();
+        List<Device> devices = project.getDevicesOfProject();
 
         // получение количества событий на устройстве
         for (Device device : devices) {

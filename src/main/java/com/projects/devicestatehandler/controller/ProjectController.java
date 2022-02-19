@@ -1,7 +1,6 @@
 package com.projects.devicestatehandler.controller;
 
 import com.projects.devicestatehandler.entity.Device;
-import com.projects.devicestatehandler.entity.Event;
 import com.projects.devicestatehandler.entity.Project;
 import com.projects.devicestatehandler.service.interfaces.DeviceService;
 import com.projects.devicestatehandler.service.interfaces.EventService;
@@ -28,18 +27,15 @@ public class ProjectController {
     @Autowired
     private EventService eventService;
 
+    // получение информации обо всех устройствах проекта
     @GetMapping("/projects/{projectId}/devices")
     public Map<String, Device> showAllDevicesOfProject(@PathVariable int projectId) {
         return devicesService.findDevicesByProjectId(projectId);
     }
 
+    // информация о всех проектах
     @GetMapping("/projects")
     public List<Project> showAllDevicesOfProject() {
         return projectService.getAllProjects();
-    }
-
-    @GetMapping("/events")
-    public List<Event> showAllEvent() {
-        return eventService.getAllEvents();
     }
 }

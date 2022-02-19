@@ -6,17 +6,6 @@ import java.util.List;
 
 public interface EventService {
 
-    // получение списка всех событий
-    List<Event> getAllEvents();
-
-    // добавление сбытия
-    void saveEvent(Event event);
-
-    // получение события по id
-    Event getEvent(int id);
-
-    // удаление события по id
-    void deleteEvent(int id);
-
+    // получение списка событий устройства по id устройства
     List<Event> findEventByDeviceId(int id);
 }

@@ -16,26 +16,6 @@ public class EventServiceImpl implements EventService {
     private EventRepository eventRepository;
 
     @Override
-    public List<Event> getAllEvents() {
-        return eventRepository.findAll();
-    }
-
-    @Override
-    public void saveEvent(Event event) {
-
-    }
-
-    @Override
-    public Event getEvent(int id) {
-        return null;
-    }
-
-    @Override
-    public void deleteEvent(int id) {
-
-    }
-
-    @Override
     public List<Event> findEventByDeviceId(int id) {
         return eventRepository.findEventByDeviceId(id);
     }

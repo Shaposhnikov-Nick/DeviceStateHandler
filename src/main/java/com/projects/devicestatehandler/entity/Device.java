@@ -27,9 +27,11 @@ public class Device {
     @Column(name = "serial_number")
     private String serialNumber;
 
+    // флаг, указывающий на наличие ошибок в устройстве
     @Transient
     private boolean hasErrors;
 
+    // общая информация об ошибках устройства
     @Transient
     private SummaryInfo summaryInfo;
 }
